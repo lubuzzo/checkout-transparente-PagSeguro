@@ -23,7 +23,8 @@ Este projeto foi desenvolvido para sanar necessidades específicas do [Portal in
  - Pagamento via eft (transferência eletrônica);
 
 ### Como utilizar: ###
- 1. Renomei o arquivo **env-example.php** para **env.php**;
- 2. Altere os valores dentro do arquivo, renomeado no passo anterior, para os dados próprios (e-mail e token - obtido em https://pagseguro.uol.com.br/preferencias/integracoes.jhtml);
- 3. Altere o **favicon.ico** conforme o seu;
- 4. Dentro da pasta images, altere o arquivo **logo.png** para o seu.
+ 1. Executar um git clone no repositório: *git clone https://github.com/lubuzzo/Checkout-Transparente-PagSeguro.git*;
+ 2. Renomei o arquivo **env-example.php** para **env.php**;
+ 3. Altere os valores dentro do arquivo, renomeado no passo anterior, para os dados próprios (e-mail e token - obtido em https://pagseguro.uol.com.br/preferencias/integracoes.jhtml);
+ 4. Altere o **favicon.ico** conforme o seu;
+ 5. Dentro da pasta images, altere o arquivo **logo.png** para o seu.
