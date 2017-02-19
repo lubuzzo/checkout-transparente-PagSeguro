@@ -1,0 +1,376 @@
+/*
+Theme Name: InfoEnem
+Author: Anonymous
+Author URI:
+Version: 1
+Description: Base theme for Wordpress
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: base
+Tags: one-column, two-columns
+Theme URI:
+*/
+/* ---------------------------------------------------------
+ 1. General reset
+ 2. Common site styles
+ 3. Styles for responsive breakpoints
+ ---------------------------------------------------------*/
+ /* ---------------------------------------------------------
+ 1. General reset
+ ---------------------------------------------------------*/
+html {box-sizing: border-box;}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+* { 
+	margin:0; 
+	padding:0;
+	/*max-height:100000px;*/
+}
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6, address, form, table, blockquote, applet, embed, object, iframe, frameset, mejs-container{margin:0 0 14px;}
+html, body, div, span, applet, embed, object, iframe, frameset,
+p, q, blockquote, sub, sup, a, abbr, acronym, font, img, small, center,
+h1, h2, h3, h4, h5, h6, b, strong, big, u, ins,
+i, cite, em, var, dfn, address, s, strike, del,
+dl, dt, dd, ol, ul, li, pre, code, kbd, samp, tt,
+fieldset, legend, form, label, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary, time, mark, audio,video{
+	border:0;
+	background:none;
+}
+/*
+ * set default text color
+ * set default font size, line height and font family
+ * set default background
+ */
+body {
+	color:#4b4b4b;
+	min-width: 320px;
+	font: 14px/21px 'Open Sans', sans-serif;
+	background: #ededed;
+	 overflow-y: scroll;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:none;
+}
+
+
+
+a {
+	text-decoration: none;
+	color:#08769e;
+	outline:none;
+}
+a:hover {text-decoration: underline;}
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+table, caption, tbody, tfoot, thead, tr, th, td{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td{
+	border:1px solid #ccc;
+	padding:3px 7px;
+	text-align:left;
+	vertical-align:top;
+}
+th{
+	border-color:#999;
+	text-align:center;
+	vertical-align:middle;
+}
+
+
+input, textarea, select {
+	font:100% Arial, Helvetica, sans-serif;
+	vertical-align:middle;
+	color:#000;
+}
+textarea {
+	overflow: auto;
+	resize: vertical;
+	vertical-align: top;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea{
+	margin: 0;
+	-webkit-appearance: none;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+	padding: 8px 26px;
+	height: 35px;
+	font: 14px/17px 'Open Sans', sans-serif;
+	color: #767676;
+	background: #f5f5f5;
+}
+::-webkit-input-placeholder {color: #767676;}
+:-moz-placeholder {color: #767676;}
+::-moz-placeholder {
+	color: #767676;
+	opacity: 1;
+}
+:-ms-input-placeholder {color: #767676;}
+label{vertical-align:middle;}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding:0;
+	border:0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	margin: 0;
+	border: 1px solid #093857;
+	border-radius: 3px;
+	padding: 0 12px;
+	height: 35px;
+	font: 600 15px 'Open Sans', sans-serif;
+	color: #fff;
+	background: #124f77;
+	-webkit-appearance: button;
+	cursor: pointer;
+	*overflow: visible;
+}
+h1, h2, h3, h4, h5, h6, b, strong, th{font-weight:bold;}
+h1{font-size:200%;}
+h2{font-size:150%;}
+h3{font-size:120%;}
+h4{font-size:110%;}
+h5{font-size:100%;}
+h6{font-size:90%;}
+i, cite, em, var, dfn, address{font-style:italic;}
+u, ins {text-decoration: underline;}
+s, strike, del {text-decoration: line-through;}
+ul{ margin-left:1px; }
+ul, ol{ padding-left:3em; }
+ul ul,
+ul ol,
+ol ul, 
+ol ol{
+	padding-left:3em;
+	margin:0;
+}
+ul>li{list-style-type:disc;}
+dl dt{
+	float:left;
+	clear:left;
+	padding-right:4px;
+	font-weight:bold;
+}
+div.aligncenter {margin: 0 auto 14px;}
+img.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+.alignleft {
+	float: left;
+	margin: 0 14px 4px 0; 
+}
+.alignright {
+	float: right;
+	margin: 0 0 4px 14px; 
+}
+ /* ---------------------------------------------------------
+ 2. Common site styles
+ ---------------------------------------------------------*/
+/* main container styles */
+.page {
+	overflow: hidden;
+	width: 100%;
+}
+#wrapper {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 1180px;
+}
+/* header styles */
+#header {
+	margin: 0 -9999px 18px;
+	padding: 14px 9999px;
+	background: #124f77;
+}
+#header:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/* page logo styles */
+.logo {
+	float: left;
+	margin: -4px 20px 0 1px;
+	width: 167px;
+}
+.logo img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.nav-opener {display: none;}
+.header-holder {
+	position: relative;
+}
+/* main navigation */
+.nav-drop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-height: 0;
+	width: 100%;
+}
+.nav-holder {padding: 2px 0 0 209px;}
+#nav {
+	margin: 0;
+	padding: 0;
+	line-height: 25px;
+	font-size: 15px;
+}
+#nav li {
+	float: left;
+	padding: 0 17px 0 17px;
+	list-style: none;
+}
+#nav li:before {
+	content: "";
+	margin: 5px 0 0 -17px;
+	float: left;
+	width: 1px;
+	height: 15px;
+	background: #1e7fa5;
+}
+#nav li:first-child:before {display: none;}
+#nav a {color: #fff;}
+/* top banner */
+.top-banner {
+	margin: 0 0 20px;
+	text-align: center;
+}
+.top-banner img {vertical-align: top;}
+/* main informative part styles */
+#main {width: 100%;}
+.main-holder {
+	padding: 0 0 22px;
+	width: 100%;
+}
+.main-holder:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/* main content styles */
+#content {
+	float: left;
+	width: 69.737%;
+}
+.content-holder {
+	margin: 0 0 30px;
+	padding: 28px 16px 28px 14px;
+	background: #fff;
+}
+/* main banner */
+.main-banner {
+	position: relative;
+	margin: 0 auto 47px;
+	max-width: 701px;
+	text-align: center;
+}
+.main-banner img {vertical-align: top;}
+ /* ---------------------------------------------------------
+ 3. Styles for responsive breakpoints
+ ---------------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+	/* main navigation */
+	.header-holder {
+		min-height: 60px;
+	}
+	.nav-holder {
+		clear: both;
+        margin-top: 30px;
+		overflow: hidden;
+		padding: 8px 0 0;
+		width: 100%;
+	}
+	
+}
+@media only screen and (max-width: 1023px) {
+	th, td{
+		padding:3px 5px;
+	}
+	#content {
+		width: 67%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#wrapper {
+		padding: 0 10px;
+	}
+	#header {
+		position: relative;
+		margin: 0 -10px 20px;
+		padding: 10px;
+    
+    .header-holder {
+		min-height: 60px;
+	}
+	.nav-holder {
+		clear: both;
+        margin-top: 30px;
+		overflow: hidden;
+		padding: 8px 0 0;
+		width: 100%;
+	}
+	#nav {
+		font-size: 18px;
+	}
+	#nav li {
+		float: none;
+		padding: 5px 0;
+		text-align: center;
+	}
+	#nav li:before {
+		display: none;
+	}
+	.main-holder {
+		padding: 0;
+	}
+	#content {
+		float: none;
+		width: auto;
+	}
+}
+
+#remodal-confirm {
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    text-align: center;
+    text-decoration: none;
+
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background-clip: padding-box;
+    
+    color: #16a085;
+    border: 2px solid #16a085;
+    background: #f4f4f4;
+    margin-left:-40px;
+}
+
+#remodal-confirm:hover,
+#remodal-confirm:active {
+    color: #f4f4f4;
+    background: #16a085;
+}
+

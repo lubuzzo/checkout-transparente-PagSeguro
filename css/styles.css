@@ -1,0 +1,160 @@
+body{
+	font-size:10px;
+	color:#555;
+	overflow-x: hidden;
+}
+
+div, p, ul, ol, li, a, img, h1, h2, h3, h4{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+h1{
+	margin:0.5em 0 1em 0;
+	font-size:2em;
+}
+
+h2{
+	margin:2em 0 1em 0;
+	font-size:1.4em;
+}
+
+
+
+.groupData{
+	padding:2%;
+	border:solid 1px #DDD;
+	margin:0 2% 0 0;
+	background:#EFEFEF;
+}
+
+.field{
+	margin:1.5em 0 1em 0;
+	font-size:1.4em;
+}
+
+.field input[type='text']{
+	padding:0.3em;
+	border:solid 1px #999;
+	width: 100%;
+}
+
+.field input:focus{
+	background:#D6D8E0;
+	color:#000;
+	border:solid 1px #000;
+}
+
+
+
+.field label{
+	display:block;
+	margin:0 0 0.2em 0;
+}
+
+.areaCode{ width:3em!important; }
+.phone{ width:13em!important; }
+.month, .addressState{ width:3em!important; }
+.year{ width:5em!important; }
+
+
+
+#cartData{
+	overflow:hidden;
+	border:solid 5px #555;
+	border-radius:0.5em;
+	background:#EEE;
+	padding:0 0 5em 0;
+	position:relative;
+}
+
+#cartData h4{
+	font-size:2em;
+	padding:0.5em;
+	background:#555;
+	color:#FFF;
+}
+
+#cartData table{
+	margin:0 0 1em 0;
+	padding:0;
+	border-collapse:collapse;
+	width:100%;
+}
+
+#cartData th{
+	font-weight:bold;
+	color:#FFF;
+	background:#555;
+	font-size:1.3em !important;
+	padding:0.5em;
+	border:solid 1px #999;
+}
+
+#cartData td{
+	padding:0.5em;
+	font-size:1.7em !important;
+	border:solid 1px #999;
+	text-align:center;
+}
+
+
+#cartTotal{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#555;
+	color:#FFF;
+	padding:1em;
+	font-size:1.5em;
+}
+
+
+
+#installmentsWrapper{
+	display:none;
+}
+
+#boletoData{
+	background:url('../images/boleto.png') no-repeat 0 0;
+	padding:70px 0 0 0;
+    background-position-x: center;
+}
+
+
+.errors{
+	font-size:1.5em;
+	color:red;
+	padding:2em;
+}
+.success{
+	color:green;
+}
+
+
+.paymentMethodGroup, .dadosOtherPagador {
+	display: none;
+}
+
+#paymentMethodsOptions, #holderDataChoice {
+	margin-left: 20px;
+}
+
+.produtoTabela {
+	color: #000 !important;
+    background: #fff !important;
+}
+
+#cardNumber {
+	width: 85% !important;
+}
+
+.bandeiraCartao {
+	width: 10%;
+}
+
+#cvvCartao, #expiraCartao {
+	display: none;
+}
