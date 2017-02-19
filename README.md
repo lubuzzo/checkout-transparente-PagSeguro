@@ -4,6 +4,8 @@ Exemplo de CheckoutTransparente do PagSeguro feito em PHP.
 
 Este projeto foi desenvolvido para sanar necessidades específicas do [Portal infoEnem](http://www.infoenem.com.br/), tenha em mente que sua implementação não é trivial e este arquivo não dispensa um contato técnico para efetuar a instalação, configuração e personalização conforme as próprias necessidades.
 
+![Checkout Transparente PagSeguro em PHP](https://raw.githubusercontent.com/lubuzzo/Checkout-Transparente-PagSeguro/master/screenshot.png "Checkout Transparente PagSeguro em PHP")
+
 ### Projeto efetua: ###
  - Transação inteiramente em Checkout Transparente;
  - Fácil mudança entre os ambientes do PagSeguro (sandbox/produção);
