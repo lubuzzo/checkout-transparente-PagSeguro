@@ -1,8 +1,10 @@
 ## Checkout Transparente PagSeguro ##
 
-Exemplo de CheckoutTransparente do PagSeguro feito em PHP.
+Exemplo de Checkout Transparente do PagSeguro feito em **PHP**.
 
-Este projeto foi desenvolvido para sanar necessidades específicas do [Portal infoEnem](http://www.infoenem.com.br/), tenha em mente que sua implementação não é trivial e este arquivo não dispensa um contato técnico para efetuar a instalação, configuração e personalização conforme as próprias necessidades.
+O desenvolvimento deste foi feito utilizando a **API** do PagSeguro, e **não** a SDK PHP.
+
+Este projeto foi desenvolvido para sanar necessidades específicas do [Portal infoEnem](http://www.infoenem.com.br/), tenha em mente que sua implementação não é trivial e este projeto não dispensa um contato técnico para efetuar a instalação, configuração e personalização conforme as próprias necessidades.
 
 ![Checkout Transparente PagSeguro em PHP](https://raw.githubusercontent.com/lubuzzo/Checkout-Transparente-PagSeguro/master/screenshot.png "Checkout Transparente PagSeguro em PHP")
 
@@ -23,8 +25,8 @@ Este projeto foi desenvolvido para sanar necessidades específicas do [Portal in
  - Pagamento via eft (transferência eletrônica);
 
 ### Como utilizar: ###
- 1. Execute um git clone no repositório: *git clone https://github.com/lubuzzo/Checkout-Transparente-PagSeguro.git*;
- 2. Renomeia o arquivo **env-example.php** para **env.php**;
+ 1. Executar um git clone no repositório: *git clone https://github.com/lubuzzo/Checkout-Transparente-PagSeguro.git*;
+ 2. Renomei o arquivo **env-example.php** para **env.php**;
  3. Altere os valores dentro do arquivo, renomeado no passo anterior, para os dados próprios (e-mail e token - obtido em https://pagseguro.uol.com.br/preferencias/integracoes.jhtml);
  4. Altere o **favicon.ico** conforme o seu;
  5. Dentro da pasta images, altere o arquivo **logo.png** para o seu.
