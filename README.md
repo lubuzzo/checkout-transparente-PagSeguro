@@ -17,16 +17,18 @@ Este projeto foi desenvolvido para sanar necessidades específicas do [Portal in
  - Segundo nova exigência de informar ao cliente o país no qual a transação está sendo processada;
  - Em casos de erros, retornados pelo PagSeguro, é exibido um modal e o campo com erro recebe destaque;
  - Quando Dados do Comprador são os mesmos do Titular do Cartão de Crédito, ocorre preenchimento automático;
- - Pega informações de parcelamento disponíveis pelo PagSeguro, para o valor da transação.
- - Em caso de pagamento com boleto, a pessoa será redirecionada para o boleto ao final da transação;
+ - Pega informações de parcelamento disponíveis pelo PagSeguro, para o valor da transação;
+ - Exibe o campo data de validade e/ou código de segurança conforme necessário para o cartão informado;
+ - Recebe e mostra a bandeira do cartão de crédito inserido;
+ - Em caso de pagamento com boleto, a pessoa será redirecionada para o boleto ao final da transação.
 
 ### Projeto não efetua: ###
  - Venda de mais que um produto;
- - Pagamento via eft (transferência eletrônica);
+ - Pagamento via eft (transferência eletrônica).
 
 ### Como utilizar: ###
  1. Executar um git clone no repositório: *git clone https://github.com/lubuzzo/Checkout-Transparente-PagSeguro.git*;
  2. Renomei o arquivo **env-example.php** para **env.php**;
- 3. Altere os valores dentro do arquivo, renomeado no passo anterior, para os dados próprios (e-mail e token - obtido em https://pagseguro.uol.com.br/preferencias/integracoes.jhtml);
+ 3. Altere os valores dentro do arquivo, renomeado no passo anterior, para os dados próprios (e-mail, token - obtido nas [configurações do PagSeguro](https://pagseguro.uol.com.br/preferencias/integracoes.jhtml), url de notificação;
  4. Altere o **favicon.ico** conforme o seu;
  5. Dentro da pasta images, altere o arquivo **logo.png** para o seu.

@@ -6,7 +6,7 @@ function gerarXmlBoleto($id, $produto, $valor, $nome, $cpf, $ddd, $telefone, $em
   return "<payment>
   <mode>default</mode>
   <currency>BRL</currency>
-  <notificationURL>http://painel.infoenem.com.br/especifico/transaction.php</notificationURL>
+  <notificationURL>" . $notificationURL . "</notificationURL>
   <receiverEmail>" . $emailPagseguro . "</receiverEmail>
   <sender>
     <hash>". $senderHash . "</hash>
@@ -62,7 +62,7 @@ function gerarXmlCartao($id, $produto, $valor, $nome, $cpf, $ddd, $telefone, $em
   return "<payment>
   <mode>default</mode>
   <currency>BRL</currency>
-  <notificationURL>http://painel.infoenem.com.br/especifico/transaction.php</notificationURL>
+  <notificationURL>" . $notificationURL . "</notificationURL>
   <receiverEmail>" . $emailPagseguro . "</receiverEmail>
   <sender>
     <hash>". $senderHash . "</hash>
@@ -105,7 +105,7 @@ function gerarXmlCartao($id, $produto, $valor, $nome, $cpf, $ddd, $telefone, $em
         <state>" . $estadoPagamento . "</state>
         <postalCode>" . $cepPagamento . "</postalCode>
         <country>BRA</country>
-    </billingAddress>    
+    </billingAddress>
     <installment>
       <quantity>" . $parcelas . "</quantity>
       <value>" . $valorParcelas . "</value>
