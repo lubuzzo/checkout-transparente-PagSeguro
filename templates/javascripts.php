@@ -72,37 +72,37 @@ $("input[type='text']").on('blur', function(e) {
       amount: (($("#totalValue").html()).replace(",", ".")),
       brand: $("#creditCardBrand").val(),
       maxInstallmentNoInterest: 2,
-      
+
       success: function(response) {
-        console.log(response.installments);
+        //console.log(response.installments);
         $("#installmentsWrapper").css('display', "block");
 
 
         var installments = response.installments[$("#creditCardBrand").val()];
-        
+
         var options = '';
         for (var i in installments) {
-          
+
           var optionItem     = installments[i];
           var optionQuantity = optionItem.quantity;
           var optionAmount   = optionItem.installmentAmount;
           var optionLabel    = (optionQuantity + " x R$ " + (optionAmount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,').replace(".", ',')));
-          
+
           options += ('<option value="' + optionItem.quantity + '" valorparcela="' + optionAmount +'">'+ optionLabel +'</option>');
-          
+
         };
-        
+
         $("#installmentQuantity").html(options);
 
       },
-      
+
       error: function(response) {
-        console.log(response);
+        //console.log(response);
       },
-      
+
       complete: function(response) {
       }
-    });    
+    });
   }
 
   $("#installmentQuantity").change(function() {
@@ -114,12 +114,12 @@ $("input[type='text']").on('blur', function(e) {
 
   function brandCard() {
 
-    PagSeguroDirectPayment.getBrand({  
+    PagSeguroDirectPayment.getBrand({
       cardBin: $("#cardNumber").val(),
       success: function(response) {
         $("#creditCardBrand").val(response.brand.name);
-        $("#cardNumber").css('border', '1px solid #999'); 
-        
+        $("#cardNumber").css('border', '1px solid #999');
+
         if (response.brand.expirable) {
           $("#expiraCartao").css('display', 'block');
         } else {
@@ -130,23 +130,23 @@ $("input[type='text']").on('blur', function(e) {
         } else {
           $("#cvvCartao").css('display', 'none');
         }
-        
+
         $("#bandeiraCartao").attr('src', 'https://stc.pagseguro.uol.com.br/public/img/payment-methods-flags/68x30/' + response.brand.name + '.png');
 
 
         parcelasDisponiveis();
 
       },
-      
+
       error: function(response) {
         $("#cardNumber").css('border', '2px solid red');
-        $("#cardNumber").focus();   
+        $("#cardNumber").focus();
       },
-      
+
       complete: function(response) {
-        
+
       }
-      
+
     });
 
   }
@@ -185,29 +185,29 @@ $("input[type='text']").on('blur', function(e) {
         if (!(data.paymentLink)) {
           //alert(data);
           $("#modal-title").html("<font color='red'>Erro</font>");
-          
+
           $("#modal-body").html("");
-          console.log(data.error);
+          //console.log(data.error);
           $.each(data.error, function (index, value) {
             if (value.code) {
-              console.log("6 " + value.code);
+              //console.log("6 " + value.code);
               tratarError(value.code);
             } else {
-              console.log("7 " + data.error);
+              //console.log("7 " + data.error);
               tratarError(data.error.code);
             }
-            
+
           });
         } else {
           window.location = data.paymentLink;
           setTimeout(function () {
             $("#modal-body").html("");
             $("#modal-title").html("<font color='green'>Sucesso!</font>")
-          
+
             $("#modal-body").html("Caso você não seja redirecionado para o seu boleto, clique no botão abaixo.<br /><br /><a href='" + data.paymentLink + "'><center><img src='images/boleto.png' /><br /><br /><button class='btn-success btn-block btn-lg'>Ir para o meu boleto</button></center></a>");
           }, 3500);
         }
-        
+
       }
     });
 
@@ -217,24 +217,24 @@ $("input[type='text']").on('blur', function(e) {
       showModal();
 
       PagSeguroDirectPayment.createCardToken({
-  
+
         cardNumber: $("#cardNumber").val(),
         brand: $("#creditCardBrand").val(),
         cvv: $("#cardCvv").val(),
         expirationMonth: $("#cardExpirationMonth").val(),
         expirationYear: $("#cardExpirationYear").val(),
-  
+
         success: function (response) {
           $("#creditCardToken").val(response.card.token);
         },
         error: function (response) {
           if (response.error) {
             $("#modal-title").html("<font color='red'>Erro</font>");
-          
+
             $("#modal-body").html("");
-            console.log("4" + response);
+            //console.log("4" + response);
             $.each(response.errors, function (index, value) {
-              console.log(value);
+              //console.log(value);
               tratarError(value);
             });
           }
@@ -245,7 +245,7 @@ $("input[type='text']").on('blur', function(e) {
 
       });
 
-    
+
       $.ajax({
         type: 'POST',
         url: 'pagamentoCartao.php',
@@ -286,13 +286,13 @@ $("input[type='text']").on('blur', function(e) {
 
         },
         success: function(data) {
-          console.log(data);
+          //console.log(data);
           if (data.error) {
             if (data.error.code == "53037") {
               $("#creditCardPaymentButton").click();
             } else {
               $("#modal-title").html("<font color='red'>Erro</font>");
-          
+
               $("#modal-body").html("");
               $.each(data.error, function (index, value) {
                 if (value.code) {
@@ -302,7 +302,7 @@ $("input[type='text']").on('blur', function(e) {
                   tratarError(data.error.code)
                 }
               })
-              console.log("2 " + data);
+              //console.log("2 " + data);
             }
           } else {
 
@@ -319,7 +319,7 @@ $("input[type='text']").on('blur', function(e) {
                 if (status == "7") {
                   //alert(data);
                   $("#modal-title").html("<font color='red'>Erro</font>");
-                  
+
                   $("#modal-body").html("Erro ao processar o seu pagamento.<br/> Não se preocupe pois esse valor <b>não será debitado de sua conta ou não constará em sua fatura</b><br /><br />Verifique se você possui limite suficiente para efetuar a transação e/ou tente um cartão diferente");
 
                 } else {
@@ -327,18 +327,18 @@ $("input[type='text']").on('blur', function(e) {
                   setTimeout(function () {
                     $("#modal-body").html("");
                     $("#modal-title").html("<font color='green'>Sucesso!</font>")
-                  
+
                     $("#modal-body").html("Caso você não seja redirecionado para a nossa página de instruções, clique no botão abaixo.<br /><br /><a href='http://download.infoenem.com.br/pagamento-efetuado/'><center><button class='btn-success btn-block btn-lg'>Ir para a página de instruções</button></center></a>");
                   }, 1500);
                 }
-                
+
               }
             });
 
 
-            console.log("1 " + data);
-          } 
-            
+            //console.log("1 " + data);
+          }
+
           }
 
       });
@@ -422,7 +422,7 @@ function tratarError(id) {
   } else if (id == '53055' || id == '53056') {
     $("#modal-body").append("<p>Verifique a rua inserido</p>");
     $("#billingAddressStreet").css('border', '2px solid red');
-  
+
   } else if (id == '53042' || id == '53043' || id == '53044') {
     $("#modal-body").append("<p>Verifique o nome inserido</p>");
     $("#creditCardHolderName").css('border', '2px solid red');
@@ -454,7 +454,7 @@ function tratarError(id) {
   } else if (id == '53049' || id == '53050') {
     $("#modal-body").append("<p>Verifique o código de área informado</p>");
     $("#creditCardHolderAreaCode").css('border', '2px solid red');
-  
+
   } else if (id == '53122') {
     $("#modal-body").append("<p>Enquanto na sandbox do PagSeguro, o e-mail deve ter o domínio '@sandbox.pagseguro.com.br' (ex.: comprador@sandbox.pagseguro.com.br)</p>");
 

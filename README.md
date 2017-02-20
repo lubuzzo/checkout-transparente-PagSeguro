@@ -31,4 +31,5 @@ Este projeto foi desenvolvido para sanar necessidades específicas do [Portal in
  2. Renomei o arquivo **env-example.php** para **env.php**;
  3. Altere os valores dentro do arquivo, renomeado no passo anterior, para os dados próprios (e-mail, token - obtido nas [configurações do PagSeguro](https://pagseguro.uol.com.br/preferencias/integracoes.jhtml), url de notificação;
  4. Altere o **favicon.ico** conforme o seu;
- 5. Dentro da pasta images, altere o arquivo **logo.png** para o seu.
+ 5. Dentro da pasta images, altere o arquivo **logo.png** para o seu;
+ 6. Modifique o arquivo templates/dadosProduto.php conforme os seus próprios produtos.
