@@ -76,7 +76,7 @@
       <input type="text" name="shippingAddressCountry" id="shippingAddressCountry" value="Brasil" readonly="readonly" />
     </div>
 
-    <p style="float: left"><b>Esta compra está sendo feita no Brasil</b> <img src="//pagamento.infoenem.com.br/images/Brasil.png" alt="Bandeira do Brasil" title="Bandeira do Brasil" style="width: 64px;"/> </p>
+    <p style="float: left"><b>Esta compra está sendo feita no Brasil</b> <img src="images/Brasil.png" alt="Bandeira do Brasil" title="Bandeira do Brasil" style="width: 64px;"/> </p>
 
     <p style="clear: both"></p>
 

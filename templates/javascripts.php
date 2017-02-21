@@ -458,9 +458,11 @@ function tratarError(id) {
   } else if (id == '53122') {
     $("#modal-body").append("<p>Enquanto na sandbox do PagSeguro, o e-mail deve ter o domínio '@sandbox.pagseguro.com.br' (ex.: comprador@sandbox.pagseguro.com.br)</p>");
 
-  } else {
-    $("#modal-body").append("<p>"+ id + "</p>");
   }
+
+  // else {
+  //   $("#modal-body").append("<p>"+ id + "</p>");
+  // }
 }
 
 </script>
