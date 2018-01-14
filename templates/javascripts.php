@@ -216,7 +216,7 @@ $("input[type='text']").on('blur', function(e) {
     function pagarCartao(senderHash) {
       showModal();
 
-      PagSeguroDirectPayment.createCardToken({
+      PagSeguroDirectPayment.1
 
         cardNumber: $("#cardNumber").val(),
         brand: $("#creditCardBrand").val(),
@@ -235,7 +235,7 @@ $("input[type='text']").on('blur', function(e) {
             //console.log("4" + response);
             $.each(response.errors, function (index, value) {
               //console.log(value);
-              tratarError(value);
+              tratarError(index);
             });
           }
         },
